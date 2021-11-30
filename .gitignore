@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ignore puzzle output
+/AdventOfCode2021/Day*/output*.txt
