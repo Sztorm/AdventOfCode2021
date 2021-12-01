@@ -5,6 +5,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>AdventOfCode2021</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Part.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 
 </Project>

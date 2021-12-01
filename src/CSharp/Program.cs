@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace AdventOfCode2021
+﻿namespace AdventOfCode2021
 {
     class Program
     {
         static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            PuzzleManager.SolvePuzzle<Day1>(PuzzlePart.Part1);
         }
     }
 }
