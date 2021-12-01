@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2021
+﻿namespace AdventOfCode2021
 {
     public class Day1 : IAdventPuzzle
     {
@@ -18,9 +12,46 @@ namespace AdventOfCode2021
         };
 
         private IEnumerable<string> GetPart1Result()
-            => throw new NotImplementedException();
+        {
+            IEnumerable<int> measurements = IOUtils
+                .ReadInput(Day)
+                .Select(s => int.Parse(s));
+
+            int prevMeasurement = measurements.First();
+            int result = 0;
+
+            foreach (int measurement in measurements.Skip(1))
+            {
+                if (measurement > prevMeasurement)
+                {
+                    result++;
+                }
+                prevMeasurement = measurement;
+            }
+            return new string[] { result.ToString() };
+        }
 
         private IEnumerable<string> GetPart2Result()
-            => throw new NotImplementedException();
+        {
+            IEnumerable<int> measurements = IOUtils
+                .ReadInput(Day)
+                .Select(s => int.Parse(s));
+
+            var (m1, m2, m3) = measurements.FirstTriple();
+            int result = 0;
+
+            foreach (int measurement in measurements.Skip(3))
+            {
+                int prevTripleMeasurementSum = m1 + m2 + m3;
+                int tripleMeasurementSum = m2 + m3 + measurement;
+
+                if (tripleMeasurementSum > prevTripleMeasurementSum)
+                {
+                    result++;
+                }
+                (m1, m2, m3) = (m2, m3, measurement);
+            }
+            return new string[] { result.ToString() };
+        }
     }
 }

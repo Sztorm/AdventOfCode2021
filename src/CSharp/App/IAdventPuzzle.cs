@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2021
+﻿using System.Collections.Generic;
+
+namespace AdventOfCode2021
 {
     public interface IAdventPuzzle
     {

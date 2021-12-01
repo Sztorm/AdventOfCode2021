@@ -3,13 +3,13 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+	  <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>AdventOfCode2021</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Part.cs">
+    <Compile Update="App\Part.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
