@@ -1,7 +1,6 @@
-﻿namespace AdventOfCode2021
+﻿namespace AdventOfCode2021;
+
+class Program
 {
-    class Program
-    {
-        static void Main() => PuzzleManager.SolvePuzzle<Day1>(PuzzlePart.Part2);
-    }
+    static void Main() => PuzzleManager.SolvePuzzle<Day2>(PuzzlePart.Part1);
 }

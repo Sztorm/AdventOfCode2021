@@ -1,8 +1,7 @@
-﻿namespace AdventOfCode2021
+﻿namespace AdventOfCode2021;
+
+public enum PuzzlePart
 {
-	public enum PuzzlePart
-	{
-		Part1 = 1,
-		Part2 = 2,
-	}
+	Part1 = 1,
+	Part2 = 2,
 }

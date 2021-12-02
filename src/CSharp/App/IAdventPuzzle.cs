@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
+﻿namespace AdventOfCode2021;
 
-namespace AdventOfCode2021
+public interface IAdventPuzzle
 {
-    public interface IAdventPuzzle
-    {
-        AdventDay Day { get; }
+    AdventDay Day { get; }
 
-        IEnumerable<string> GetResult(PuzzlePart part);
-    }
+    IEnumerable<string> GetResult(PuzzlePart part);
 }
