@@ -14,6 +14,7 @@ public class Day3 : IAdventPuzzle
     private IEnumerable<string> GetPart1Result()
     {
         string[] input = IOUtils.ReadInput(Day);
+        int halfInputLength = input.Length / 2;
         int inputLineLength = input[0].Length;
         Span<int> ones = stackalloc int[inputLineLength];
 
@@ -24,7 +25,6 @@ public class Day3 : IAdventPuzzle
                 ones[j] += 1 * (input[i][j] - '0');
             }
         }
-        int halfInputLength = input.Length / 2;
         uint gammaRate = 0U;
         uint epsilonRate = 0U;
 
@@ -41,6 +41,35 @@ public class Day3 : IAdventPuzzle
 
     private IEnumerable<string> GetPart2Result()
     {
-        throw new NotImplementedException();
+        string[] input = IOUtils.ReadInput(Day);
+        string[] o2Input = input;
+        string[] co2Input = input;
+        int index = 0;
+
+        while (o2Input.Length > 1)
+        {
+            int zeroCount = o2Input.Count(s => s[index] == '0');
+            int oneCount = o2Input.Length - zeroCount;
+            char mostCommonChar = oneCount >= zeroCount ? '1' : '0';
+
+            o2Input = o2Input.Where(s => s[index] == mostCommonChar).ToArray();
+            index++;
+        }
+        index = 0;
+
+        while (co2Input.Length > 1)
+        {
+            int zeroCount = co2Input.Count(s => s[index] == '0');
+            int oneCount = co2Input.Length - zeroCount;
+            char leastCommonChar = zeroCount <= oneCount ? '0' : '1';
+
+            co2Input = co2Input.Where(s => s[index] == leastCommonChar).ToArray();
+            index++;
+        }
+        int o2Rating = Convert.ToInt32(o2Input.First(), 2);
+        int co2Rating = Convert.ToInt32(co2Input.First(), 2);
+        int lifeSupportRating = o2Rating * co2Rating;
+
+        return new string[] { lifeSupportRating.ToString() };
     }
 }

@@ -2,5 +2,5 @@
 
 class Program
 {
-    static void Main() => PuzzleManager.SolvePuzzle<Day3>(PuzzlePart.Part1);
+    static void Main() => PuzzleManager.SolvePuzzle<Day3>(PuzzlePart.Part2);
 }
